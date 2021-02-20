@@ -8,4 +8,9 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\NetCoreRabbit.Domain.Core\NetCoreRabbit.Domain.Core.csproj" />
+    <ProjectReference Include="..\NetCoreRabbit.Infra.Bus\NetCoreRabbit.Infra.Bus.csproj" />
+  </ItemGroup>
+
 </Project>
