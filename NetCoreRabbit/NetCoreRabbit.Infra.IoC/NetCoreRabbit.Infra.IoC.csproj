@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -9,6 +9,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\NetCoreRabbit.Banking.Appication\NetCoreRabbit.Banking.Application.csproj" />
+    <ProjectReference Include="..\NetCoreRabbit.Banking.Data\NetCoreRabbit.Banking.Data.csproj" />
+    <ProjectReference Include="..\NetCoreRabbit.Banking.Domain\NetCoreRabbit.Banking.Domain.csproj" />
     <ProjectReference Include="..\NetCoreRabbit.Domain.Core\NetCoreRabbit.Domain.Core.csproj" />
     <ProjectReference Include="..\NetCoreRabbit.Infra.Bus\NetCoreRabbit.Infra.Bus.csproj" />
   </ItemGroup>

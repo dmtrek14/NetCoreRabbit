@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using NetCoreRabbit.Banking.Domain.Models;
 using System;
 using System.Collections.Generic;
