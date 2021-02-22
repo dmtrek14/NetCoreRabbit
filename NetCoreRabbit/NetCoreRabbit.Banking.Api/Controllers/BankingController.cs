@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using NetCoreRabbit.Banking.Application.Interfaces;
+using NetCoreRabbit.Banking.Application.Models;
 using NetCoreRabbit.Banking.Domain.Models;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,13 @@ namespace NetCoreRabbit.Banking.Api.Controllers
 		public ActionResult<IEnumerable<Account>> Get()
 		{
 			return Ok(_accountService.GetAccounts());
+		}
+
+		[HttpPost]
+		public IActionResult Post([FromBody] AccountTransfer accountTransfer)
+		{
+
+			return Ok(accountTransfer);
 		}
 	}
 }

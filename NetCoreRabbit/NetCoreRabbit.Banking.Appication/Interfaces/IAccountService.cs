@@ -1,4 +1,5 @@
-﻿using NetCoreRabbit.Banking.Domain.Models;
+﻿using NetCoreRabbit.Banking.Application.Models;
+using NetCoreRabbit.Banking.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,6 @@ namespace NetCoreRabbit.Banking.Application.Interfaces
 	public interface IAccountService
 	{
 		IEnumerable<Account> GetAccounts();
+		void Transfer(AccountTransfer accountTransfer);
 	}
 }
