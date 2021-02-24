@@ -1,7 +1,9 @@
 ﻿using NetCoreRabbit.Banking.Application.Interfaces;
 using NetCoreRabbit.Banking.Application.Models;
+using NetCoreRabbit.Banking.Domain.Commands;
 using NetCoreRabbit.Banking.Domain.Interfaces;
 using NetCoreRabbit.Banking.Domain.Models;
+using NetCoreRabbit.Domain.Core.Bus;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +15,11 @@ namespace NetCoreRabbit.Banking.Application.Services
 	public class AccountService : IAccountService
 	{
 		private readonly IAccountRepository _accountRepository;
-		public AccountService(IAccountRepository accountRespoitory)
+		private readonly IEventBus _bus;
+		public AccountService(IAccountRepository accountRespoitory, IEventBus bus)
 		{
 			_accountRepository = accountRespoitory;
+			_bus = bus;
 		}
 		public IEnumerable<Account> GetAccounts()
 		{
@@ -24,7 +28,12 @@ namespace NetCoreRabbit.Banking.Application.Services
 
 		public void Transfer(AccountTransfer accountTransfer)
 		{
-			throw new NotImplementedException();
+			var createTransferCommand = new CreateTransferCommand(
+				accountTransfer.FromAccount,
+				accountTransfer.ToAccount,
+				accountTransfer.TransferAmount
+				);
+			_bus.SendCommand(createTransferCommand);
 		}
 	}
 }

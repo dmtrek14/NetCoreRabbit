@@ -5,9 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="CommandHandlers\" />
-    <Folder Include="Events\" />
     <Folder Include="EventHandlers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NetCoreRabbit.Domain.Core\NetCoreRabbit.Domain.Core.csproj" />
+    <ProjectReference Include="..\NetCoreRabbit.Infra.Bus\NetCoreRabbit.Infra.Bus.csproj" />
   </ItemGroup>
 
 </Project>
